@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Facebook Contest Winner Picker</title>
+    <% include ../partials/styles %>
+  </head>
+  <body>
+    <header>
+      <h1>Facebook Contest Winner Picker</h1>
+    </header>
+
+    <main>
+      <form action="comments" method="get">
+        <label for="id">Post ID</label>
+        <input id="id" name="postId" type="number" required autofocus />
+
+        <label for="limit">Limit</label>
+        <input id="limit" name="limit" type="number" value="10" required />
+
+        <button type="submit" name="choice" value="random">Get random users</button>
+        <button type="submit" name="choice" value="popular">Get users with most comments</button>
+      </form>
+
+      <% if (error) { %>
+        <div class="error">
+          <%= error %>
+        </div>
+      <% } %>
+
+      <% if (posters) { %>
+        <% include ../partials/posters %>
+      <% } %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "facebook-contest-winner-picker",
+  "version": "0.1.0",
+  "description": "A simple web app to get random commenters or users with most comments under a Facebook post.",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:oliverviljamaa/facebook-contest-winner-picker.git",
+    "type": "git",
+    "fullname": "oliverviljamaa/facebook-contest-winner-picker"
+  },
+  "scripts": {
+    "dev": "nodemon -e js,ejs",
+    "lint": "eslint index.js app",
+    "test": "yarn lint && jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "codeclimate": "yarn test:coverage && codeclimate-test-reporter < coverage/lcov.info",
+    "release-to-github": "release-to-github-with-changelog",
+    "start": "node index"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "request": "^2.80.0",
+    "request-promise": "^4.1.1",
+    "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^19.0.2",
+    "nodemon": "^1.11.0",
+    "release-to-github-with-changelog": "^0.7.0",
+    "zombie": "^5.0.5"
+  },
+  "author": "Oliver Viljamaa <oliver.viljamaa@gmail.com>",
+  "license": "MIT"
+}
